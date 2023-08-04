@@ -10,4 +10,7 @@ urlpatterns = [
     path('rooms/<int:pk>/', RoomDetailView.as_view(), name='room-detail'),
     path('hotels_search/', HotelSearchView.as_view(), name='hotel-search'),
     path('rooms_search/', RoomSearchView.as_view(), name='room-search'),
+    path('room_booking/', RoomBookingView.as_view(), name='room-booking'),
+    path('user_room_booking/', UserRoomBookingListView.as_view(), name='user-room-booking-list'),
+     path('cancel_booking/<int:booking_id>/', CancelBookingView.as_view(), name='cancel-booking'),
 ]

@@ -20,3 +20,11 @@ class Room(models.Model):
 
     def __str__(self):
         return f"{self.hotel.name} - Room {self.room_number}"
+
+class RoomBooking(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    room = models.ForeignKey(Room, on_delete=models.CASCADE)
+    check_in_date = models.DateField()
+    check_out_date = models.DateField()
+    num_guests = models.PositiveIntegerField()
+    is_cancelled = models.BooleanField(default=False) 
